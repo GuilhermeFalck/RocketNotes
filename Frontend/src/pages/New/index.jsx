@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../hooks/auth";
 
 import { useNavigate } from "react-router-dom";
 
@@ -23,6 +24,8 @@ export function New() {
 
   const [tags, setTags] = useState([]);
   const [newTag, setNewTag] = useState("");
+
+  const { sendNewNote } = useAuth();
 
   const navigate = useNavigate();
 
